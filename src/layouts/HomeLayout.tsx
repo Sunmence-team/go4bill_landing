@@ -1,20 +1,41 @@
-import { Outlet, useMatches } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import React, { useEffect } from "react";
 import type { RouteHandle } from "../lib/interfaces";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const HomeLayout: React.FC = () => {
-  const matches = useMatches();
+  const { pathname, hash } = useLocation();
 
-  const activeRoute = matches.find((match) => (match.handle as RouteHandle)?.pageName);
-  const pageName = (activeRoute?.handle as RouteHandle)?.pageName || "Page";
+  let pageName = "Page";
+  if (pathname === "/") {
+    pageName = "Home";
+  } else if (pathname === "/services") {
+    pageName = "Services";
+  } else if (pathname === "/contact") {
+    pageName = "Contact Us";
+  }
 
   useEffect(() => {
     document.title = `Go4Bill | ${pageName}`;
-  }, [pageName]);
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pageName, pathname, hash]);
 
   return (
     <div>
+      <Navbar />
       <Outlet />
+      <Footer />
     </div>
   );
 };
