@@ -2,8 +2,7 @@ import React from "react";
 import PageHeader from "../components/PageHeader";
 import { motion } from "motion/react";
 import { TbCheck, TbArrowsLeftRight, TbWifi } from "react-icons/tb";
-import { IoMdCheckmarkCircle } from "react-icons/io";
-import { FaLock, FaWallet, FaFileAlt, FaClock, FaBolt, FaTv, FaGlobe, FaCreditCard, FaPlane, FaShoppingBag, FaReceipt, FaExchangeAlt } from "react-icons/fa";
+import { FaLock, FaWallet, FaFileAlt, FaClock, FaBolt, FaTv, FaGlobe, FaCreditCard, FaPlane, FaShoppingBag, FaReceipt } from "react-icons/fa";
 import assets from "../assets/assets";
 import { LuCircleCheckBig } from "react-icons/lu";
 
@@ -706,7 +705,7 @@ const Services: React.FC = () => {
 
             // Label anchor & offset: push text away from center
             const angle = item.angle;
-            let textAnchor = "middle";
+            let textAnchor: "start" | "middle" | "end" | "inherit" = "middle";
             let lx = cx;
             let ly = cy;
             const labelGap = 19;
