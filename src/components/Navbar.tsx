@@ -16,7 +16,13 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
+  const [prevPathname, setPrevPathname] = useState(pathname);
   const isHome = pathname === "/";
+
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,10 +35,6 @@ const Navbar: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   const handleLinkClick = (href: string, isPage: boolean) => {
     if (!isPage || pathname === href) {

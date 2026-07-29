@@ -3,8 +3,6 @@ import assets from "../assets/assets";
 import { motion } from "motion/react";
 import {
   TbArrowsLeftRight,
-  TbPercentage,
-  TbCheck,
   TbPlus,
   TbX,
 } from "react-icons/tb";
@@ -13,8 +11,7 @@ import {
   IoMdStar,
 } from "react-icons/io";
 import { HiEye } from "react-icons/hi";
-import { MdHeadsetMic } from "react-icons/md";
-import { FaShieldAlt, FaReceipt, FaPlane, FaFileAlt, FaUser, FaCreditCard, FaLock, FaWallet } from "react-icons/fa";
+import { FaReceipt, FaPlane, FaFileAlt, FaUser, FaCreditCard, FaLock, FaWallet } from "react-icons/fa";
 import { LuCircleCheckBig } from "react-icons/lu";
 
 
@@ -112,12 +109,7 @@ const Home: React.FC = () => {
                   >
                     Get Started
                   </a>
-                  <a
-                    href="#download"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg text-primary bg-white hover:bg-slate-100 active:scale-95 transition-all duration-200 shadow-sm"
-                  >
-                    Get Started
-                  </a>
+                 
                 </motion.div>
               </div>
 
