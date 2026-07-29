@@ -558,7 +558,7 @@ const Home: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* Introducing Market Union Section */}
+      {/* Introducing Smart Market Section */}
       <section
         id="value"
         className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24"
@@ -574,7 +574,7 @@ const Home: React.FC = () => {
           >
             <img
               src={assets.mage1}
-              alt="Market Union Gate Entrance"
+              alt="Smart Market Gate Entrance"
               className="w-full aspect-[4/3] object-cover select-none hover:scale-105 transition-transform duration-500 ease-out"
             />
           </motion.div>
@@ -588,7 +588,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-3xl sm:text-4xl font-extrabold text-[#0B2D5C] tracking-tight font-sans mb-4 lg:text-start text-center"
             >
-              Introducing Market Union
+              Introducing Smart Market
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -597,10 +597,10 @@ const Home: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal mb-8 font-sans lg:text-start text-center"
             >
-              Market Union helps organize market operations through digital
+              Smart Market helps organize market operations through digital
               access, activity tracking, wallet integration, and simplified
               market management. Whether you're visiting the market or running a
-              shop, Market Union provides a seamless experience powered by
+              shop, Smart Market provides a seamless experience powered by
               Go4Bill.
             </motion.p>
 
