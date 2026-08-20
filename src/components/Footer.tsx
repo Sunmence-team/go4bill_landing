@@ -73,6 +73,11 @@ const Footer: React.FC = () => {
                   FAQ
                 </a>
               </li>
+              <li>
+                <Link to="/privacy-policy" className="text-white/80 hover:text-white transition-colors text-sm">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
