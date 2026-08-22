@@ -84,12 +84,23 @@ const Footer: React.FC = () => {
           {/* Right Column for Contact */}
           <div className="md:col-span-4 flex flex-col justify-start">
             <h3 className="text-lg font-bold text-white mb-2 font-sans">Contact</h3>
-            <p className="text-white/80 text-sm mb-6 font-sans">+2348118785193</p>
+            <p className="text-white/80 text-sm mb-6 font-sans">
+              <a href="tel:+2349126551860" className="hover:text-white transition-colors">
+                +234 912 655 1860
+              </a>
+            </p>
 
             <h3 className="text-lg font-bold text-white mb-2 font-sans">Email</h3>
             <p className="text-white/80 text-sm mb-6 font-sans">
-              <a href="mailto:whitequeenprecious1@gmail.com" className="hover:text-white transition-colors">
-                whitequeenprecious1 @gmail.com
+              <a href="mailto:support@go4bill.com" className="hover:text-white transition-colors">
+                support@go4bill.com
+              </a>
+            </p>
+
+            <h3 className="text-lg font-bold text-white mb-2 font-sans">Website</h3>
+            <p className="text-white/80 text-sm mb-6 font-sans">
+              <a href="https://go4billapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                https://go4billapp.com
               </a>
             </p>
 

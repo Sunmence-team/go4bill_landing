@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { motion } from "motion/react";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaGlobe, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import assests from "../assets/assets";
 
 const Contact: React.FC = () => {
@@ -61,8 +61,8 @@ const Contact: React.FC = () => {
                     <span className="block text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">
                       Contact
                     </span>
-                    <a href="tel:+2348118785193" className="text-sm sm:text-base font-bold text-[#0B2D5C] hover:underline font-sans">
-                      +2348118785193
+                    <a href="tel:+2349126551860" className="text-sm sm:text-base font-bold text-[#0B2D5C] hover:underline font-sans">
+                      +234 912 655 1860
                     </a>
                   </div>
                 </div>
@@ -76,8 +76,23 @@ const Contact: React.FC = () => {
                     <span className="block text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">
                       Email
                     </span>
-                    <a href="mailto:whitequeenprecious1@gmail.com" className="text-sm sm:text-base font-bold text-[#0B2D5C] hover:underline font-sans break-all">
-                      whitequeenprecious1@gmail.com
+                    <a href="mailto:support@go4bill.com" className="text-sm sm:text-base font-bold text-[#0B2D5C] hover:underline font-sans break-all">
+                      support@go4bill.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Website info */}
+                <div className="flex gap-4 items-center">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-slate-200/60 flex items-center justify-center shrink-0 text-[#0B2D5C]">
+                    <FaGlobe className="text-xl sm:text-2xl" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider font-sans">
+                      Website
+                    </span>
+                    <a href="https://go4billapp.com" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-bold text-[#0B2D5C] hover:underline font-sans break-all">
+                      https://go4billapp.com
                     </a>
                   </div>
                 </div>

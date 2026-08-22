@@ -593,24 +593,36 @@ const PrivacyPolicy: React.FC = () => {
                     <span className="text-white/60 font-semibold">
                       Website:
                     </span>{" "}
-                    Go4Bill Platform
+                    <a
+                      href="https://go4billapp.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      https://go4billapp.com
+                    </a>
                   </p>
                   <p className="flex items-center gap-2">
                     <span className="text-white/60 font-semibold">
                       Privacy & Support Email:
                     </span>
                     <a
-                      href="mailto:whitequeenprecious1@gmail.com"
+                      href="mailto:support@go4bill.com"
                       className="underline hover:text-white transition-colors"
                     >
-                      whitequeenprecious1@gmail.com
+                      support@go4bill.com
                     </a>
                   </p>
                   <p className="flex items-center gap-2">
                     <span className="text-white/60 font-semibold">
                       Contact Phone:
                     </span>{" "}
-                    +2348118785193
+                    <a
+                      href="tel:+2349126551860"
+                      className="underline hover:text-white transition-colors"
+                    >
+                      +234 912 655 1860
+                    </a>
                   </p>
                 </div>
               </div>
