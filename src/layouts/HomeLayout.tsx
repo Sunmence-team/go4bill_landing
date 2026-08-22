@@ -13,6 +13,8 @@ const HomeLayout: React.FC = () => {
     pageName = "Services";
   } else if (pathname === "/contact") {
     pageName = "Contact Us";
+  } else if (pathname === "/privacy-policy") {
+    pageName = "Privacy Policy";
   }
 
   useEffect(() => {

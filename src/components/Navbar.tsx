@@ -10,6 +10,7 @@ const links = [
   { label: "How it works", href: "#how", isPage: false },
   { label: "services", href: "/services", isPage: true },
   { label: "Contact Us", href: "/contact", isPage: true },
+  { label: "Privacy Policy", href: "/privacy-policy", isPage: true },
 ];
 
 const Navbar: React.FC = () => {
