@@ -2,7 +2,19 @@ import React from "react";
 import PageHeader from "../components/PageHeader";
 import { motion } from "motion/react";
 import { TbCheck, TbArrowsLeftRight, TbWifi } from "react-icons/tb";
-import { FaLock, FaWallet, FaFileAlt, FaClock, FaBolt, FaTv, FaGlobe, FaCreditCard, FaPlane, FaShoppingBag, FaReceipt } from "react-icons/fa";
+import {
+  FaLock,
+  FaWallet,
+  FaFileAlt,
+  FaClock,
+  FaBolt,
+  FaTv,
+  FaGlobe,
+  FaCreditCard,
+  FaPlane,
+  FaShoppingBag,
+  FaReceipt,
+} from "react-icons/fa";
 import assets from "../assets/assets";
 import { LuCircleCheckBig } from "react-icons/lu";
 
@@ -56,22 +68,26 @@ const Services: React.FC = () => {
   const cards = [
     {
       title: "Secure wallet funding",
-      description: "Easily add funds to your wallet through secure payment channels, ensuring your money is protected at every step.",
+      description:
+        "Easily add funds to your wallet through secure payment channels, ensuring your money is protected at every step.",
       icon: <FaLock className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
     {
       title: "Wallet balance management",
-      description: "Keep track of your available funds in real time with a clear and intuitive wallet management system..",
+      description:
+        "Keep track of your available funds in real time with a clear and intuitive wallet management system..",
       icon: <FaWallet className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
     {
       title: "Transaction history",
-      description: "Access a detailed record of all your transactions anytime, making it easy to monitor and manage your finances.",
+      description:
+        "Access a detailed record of all your transactions anytime, making it easy to monitor and manage your finances.",
       icon: <FaFileAlt className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
     {
       title: "Fast and reliable payments",
-      description: "Enjoy instant and dependable payments for bills, transfers, and other services with minimal delays.",
+      description:
+        "Enjoy instant and dependable payments for bills, transfers, and other services with minimal delays.",
       icon: <FaClock className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
   ];
@@ -79,23 +95,28 @@ const Services: React.FC = () => {
   const transferCards = [
     {
       title: "Instant transfers",
-      description: "Send money quickly and securely to other users with real-time transaction processing.",
+      description:
+        "Send money quickly and securely to other users with real-time transaction processing.",
     },
     {
       title: "User Search by Username",
-      description: "Search for and identify users instantly through their unique usernames.",
+      description:
+        "Search for and identify users instantly through their unique usernames.",
     },
     {
       title: "User Search by Phone Number",
-      description: "Easily find and connect with users using their registered phone numbers.",
+      description:
+        "Easily find and connect with users using their registered phone numbers.",
     },
     {
       title: "User Search by Email",
-      description: "Locate users conveniently using their registered email addresses for seamless transactions.",
+      description:
+        "Locate users conveniently using their registered email addresses for seamless transactions.",
     },
     {
       title: "Transaction Receipts",
-      description: "Access and download detailed receipts for every transaction for easy tracking and record-keeping.",
+      description:
+        "Access and download detailed receipts for every transaction for easy tracking and record-keeping.",
     },
   ];
 
@@ -153,22 +174,26 @@ const Services: React.FC = () => {
   const billCards = [
     {
       title: "Electricity",
-      description: "Pay your electricity bills quickly and conveniently from anywhere, anytime.",
+      description:
+        "Pay your electricity bills quickly and conveniently from anywhere, anytime.",
       icon: <FaBolt className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
     {
       title: "Cable TV",
-      description: "Renew your cable TV subscriptions seamlessly and never miss your favorite shows.",
+      description:
+        "Renew your cable TV subscriptions seamlessly and never miss your favorite shows.",
       icon: <FaTv className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
     {
       title: "Internet services",
-      description: "Purchase data plans and internet subscriptions with fast and secure processing.",
+      description:
+        "Purchase data plans and internet subscriptions with fast and secure processing.",
       icon: <FaGlobe className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
     {
       title: "Other digital utilities",
-      description: "Access a variety of essential digital services and payments all in one place.",
+      description:
+        "Access a variety of essential digital services and payments all in one place.",
       icon: <FaCreditCard className="text-xl sm:text-2xl text-[#0b2d5c]" />,
     },
   ];
@@ -176,22 +201,26 @@ const Services: React.FC = () => {
   const flightCards = [
     {
       title: "Flight Search",
-      description: "Find flights from multiple airlines and travel providers in one convenient place.",
+      description:
+        "Find flights from multiple airlines and travel providers in one convenient place.",
       image: assets.flight1,
     },
     {
       title: "Flight Comparison",
-      description: "Compare prices, schedules, and options to choose the flight that best suits your needs.",
+      description:
+        "Compare prices, schedules, and options to choose the flight that best suits your needs.",
       image: assets.flight2,
     },
     {
       title: "Secure payments",
-      description: "Book with confidence using safe and encrypted payment methods.",
+      description:
+        "Book with confidence using safe and encrypted payment methods.",
       image: assets.flight3,
     },
     {
       title: "Instant booking confirmation",
-      description: "Receive immediate booking confirmation and travel details as soon as your payment is completed.",
+      description:
+        "Receive immediate booking confirmation and travel details as soon as your payment is completed.",
       image: assets.flight4,
     },
   ];
@@ -235,15 +264,13 @@ const Services: React.FC = () => {
   return (
     <main className="min-h-screen bg-slate-50">
       {/* 1. Reusable Hero Header Card */}
-      <PageHeader 
-        title="What we Do"
-      />
+      <PageHeader title="What we Do" />
 
       {/* Services page content starts here */}
       <div className="px-4 sm:px-6 lg:px-8 mt-16 sm:mt-24">
         {/* Title Section */}
         <div className="text-center mb-12 sm:mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -252,14 +279,15 @@ const Services: React.FC = () => {
           >
             Smart Digital Wallet
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="mt-4 text-slate-500 text-base sm:text-lg max-w-2xl mx-auto font-normal font-sans"
           >
-            Fund your wallet securely and manage your money from one centralized platform.
+            Fund your wallet securely and manage your money from one centralized
+            platform.
           </motion.p>
         </div>
 
@@ -279,7 +307,7 @@ const Services: React.FC = () => {
               <div className="w-12 h-12 rounded-full bg-tertiary flex items-center justify-center">
                 {card.icon}
               </div>
-              
+
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-[#0b2d5c] mb-2 sm:mb-3 font-sans">
                   {card.title}
@@ -297,7 +325,7 @@ const Services: React.FC = () => {
       <div className="px-4 sm:px-6 lg:px-8 mt-24 sm:mt-32">
         {/* Title Section */}
         <div className="text-center mb-12 sm:mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -306,7 +334,7 @@ const Services: React.FC = () => {
           >
             Instant Money Transfers
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -317,96 +345,220 @@ const Services: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* Desktop Layout (3 Columns) */}
-        <div className="hidden lg:grid grid-cols-3 gap-x-8 gap-y-10 max-w-7xl mx-auto">
-          {/* Top Left */}
+        {/* Desktop Step-Flow Layout (Pixel-Perfect Unified SVG) */}
+        <div className="hidden lg:block relative w-full max-w-7xl mx-auto h-[780px]">
+          {/* Single Unified SVG Overlay for Gapless Lines & Arrows */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 1280 780"
+            fill="none"
+          >
+            {/* Central Vertical Line */}
+            <path
+              d="M 640 60 V 750"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            {/* Horizontal Branches */}
+            <path
+              d="M 440 60 H 640"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 640 210 H 840"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 440 360 H 640"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 640 510 H 840"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 440 660 H 640"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            {/* Downward Chevron Arrows (Matching Reference Image) */}
+            <path
+              d="M 620 135 L 640 155 L 660 135"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M 620 285 L 640 305 L 660 285"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M 620 435 L 640 455 L 660 435"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M 620 585 L 640 605 L 660 585"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M 620 730 L 640 750 L 660 730"
+              stroke="#E5EEF5"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+
+          {/* Card 0 - Left */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="bg-[#0B2D5C] text-white p-6 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300"
+            whileHover={{ y: -3, transition: { duration: 0.2 } }}
+            className="absolute left-0 top-[10px] w-[440px] h-[100px] bg-[#0B2D5C] text-white p-6 rounded-[1.2rem] shadow-sm flex flex-col justify-center"
           >
-            <h3 className="text-lg font-bold mb-2">{transferCards[0].title}</h3>
-            <p className="text-sm text-white/80">{transferCards[0].description}</p>
+            <h3 className="text-lg font-bold mb-1 font-sans">
+              {transferCards[0].title}
+            </h3>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+              {transferCards[0].description}
+            </p>
           </motion.div>
 
-          <div />
-
-          {/* Top Right */}
+          {/* Card 1 - Right */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="bg-[#0B2D5C] text-white p-6 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300"
+            whileHover={{ y: -3, transition: { duration: 0.2 } }}
+            className="absolute right-0 top-[160px] w-[440px] h-[100px] bg-[#0B2D5C] text-white p-6 rounded-[1.2rem] shadow-sm flex flex-col justify-center"
           >
-            <h3 className="text-lg font-bold mb-2">{transferCards[1].title}</h3>
-            <p className="text-sm text-white/80">{transferCards[1].description}</p>
+            <h3 className="text-lg font-bold mb-1 font-sans">
+              {transferCards[1].title}
+            </h3>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+              {transferCards[1].description}
+            </p>
           </motion.div>
 
-          <div />
-
-          {/* Center */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="bg-[#0B2D5C] text-white p-6 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300"
-          >
-            <h3 className="text-lg font-bold mb-2">{transferCards[2].title}</h3>
-            <p className="text-sm text-white/80">{transferCards[2].description}</p>
-          </motion.div>
-
-          <div />
-
-          {/* Bottom Left */}
+          {/* Card 2 - Left */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="bg-[#0B2D5C] text-white p-6 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ y: -3, transition: { duration: 0.2 } }}
+            className="absolute left-0 top-[310px] w-[440px] h-[100px] bg-[#0B2D5C] text-white p-6 rounded-[1.2rem] shadow-sm flex flex-col justify-center"
           >
-            <h3 className="text-lg font-bold mb-2">{transferCards[3].title}</h3>
-            <p className="text-sm text-white/80">{transferCards[3].description}</p>
+            <h3 className="text-lg font-bold mb-1 font-sans">
+              {transferCards[2].title}
+            </h3>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+              {transferCards[2].description}
+            </p>
           </motion.div>
 
-          <div />
-
-          {/* Bottom Right */}
+          {/* Card 3 - Right */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="bg-[#0B2D5C] text-white p-6 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300"
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ y: -3, transition: { duration: 0.2 } }}
+            className="absolute right-0 top-[460px] w-[440px] h-[100px] bg-[#0B2D5C] text-white p-6 rounded-[1.2rem] shadow-sm flex flex-col justify-center"
           >
-            <h3 className="text-lg font-bold mb-2">{transferCards[4].title}</h3>
-            <p className="text-sm text-white/80">{transferCards[4].description}</p>
+            <h3 className="text-lg font-bold mb-1 font-sans">
+              {transferCards[3].title}
+            </h3>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+              {transferCards[3].description}
+            </p>
+          </motion.div>
+
+          {/* Card 4 - Left */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ y: -3, transition: { duration: 0.2 } }}
+            className="absolute left-0 top-[610px] w-[440px] h-[100px] bg-[#0B2D5C] text-white p-6 rounded-[1.2rem] shadow-sm flex flex-col justify-center"
+          >
+            <h3 className="text-lg font-bold mb-1 font-sans">
+              {transferCards[4].title}
+            </h3>
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-sans">
+              {transferCards[4].description}
+            </p>
           </motion.div>
         </div>
 
-        {/* Mobile/Tablet Layout */}
-        <div className="lg:hidden flex flex-col gap-6">
+        {/* Mobile/Tablet Step Timeline */}
+        <div className="lg:hidden flex flex-col items-center gap-2 max-w-lg mx-auto py-4">
           {transferCards.map((card, idx) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05, ease: "easeOut" }}
-              className="bg-[#0B2D5C] text-white p-6 sm:p-8 rounded-[1.5rem] shadow-sm flex flex-col justify-center"
-            >
-              <h3 className="text-base sm:text-lg font-bold mb-2 font-sans">{card.title}</h3>
-              <p className="text-white/85 text-xs sm:text-sm leading-relaxed font-normal font-sans">{card.description}</p>
-            </motion.div>
+            <React.Fragment key={card.title}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: idx * 0.05,
+                  ease: "easeOut",
+                }}
+                className="bg-[#0B2D5C] text-white p-6 rounded-2xl shadow-sm w-full"
+              >
+                <h3 className="text-base sm:text-lg font-bold mb-2 font-sans">
+                  {card.title}
+                </h3>
+                <p className="text-white/85 text-xs sm:text-sm leading-relaxed font-normal font-sans">
+                  {card.description}
+                </p>
+              </motion.div>
+              {idx < transferCards.length && (
+                <div className="h-10 flex items-center justify-center relative py-1">
+                  <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
+                    <path
+                      d="M 20 0 V 32"
+                      stroke="#E5EEF5"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+                    <path
+                      d="M 10 18 L 20 28 L 30 18"
+                      stroke="#E5EEF5"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              )}
+            </React.Fragment>
           ))}
         </div>
       </div>
@@ -414,7 +566,7 @@ const Services: React.FC = () => {
       {/* 3. Airtime & Data Top-Ups Section */}
       <div className="px-4 sm:px-6 lg:px-8 mt-24 sm:mt-32">
         <div className="text-center mb-12 sm:mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -423,14 +575,15 @@ const Services: React.FC = () => {
           >
             Airtime & Data Top-Ups
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="mt-4 text-slate-500 text-base sm:text-lg max-w-2xl mx-auto font-normal font-sans"
           >
-            Stay connected by purchasing airtime and data bundles directly from your wallet.
+            Stay connected by purchasing airtime and data bundles directly from
+            your wallet.
           </motion.p>
         </div>
 
@@ -446,12 +599,21 @@ const Services: React.FC = () => {
               className="bg-[#0B2D5C]/5 p-6 sm:p-8 rounded-[2rem] hover:shadow-lg transition-all duration-300 flex flex-col items-start"
             >
               <div className="w-12 h-12 rounded-full overflow-hidden bg-white shadow-xs flex items-center justify-center p-0.5 mb-6">
-                <img src={card.logo} alt={`${card.provider} Logo`} className="w-full h-full object-contain rounded-full" />
+                <img
+                  src={card.logo}
+                  alt={`${card.provider} Logo`}
+                  className="w-full h-full object-contain rounded-full"
+                />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-[#0B2D5C] mb-6 font-sans tracking-wide">{card.provider}</h3>
+              <h3 className="text-base sm:text-lg font-bold text-[#0B2D5C] mb-6 font-sans tracking-wide">
+                {card.provider}
+              </h3>
               <ul className="space-y-4 w-full">
                 {card.plans.map((plan) => (
-                  <li key={plan} className="flex gap-3 items-center text-slate-700 text-sm font-medium font-sans">
+                  <li
+                    key={plan}
+                    className="flex gap-3 items-center text-slate-700 text-sm font-medium font-sans"
+                  >
                     <LuCircleCheckBig className="text-[#0B2D5C] text-lg shrink-0" />
                     <span>{plan}</span>
                   </li>
@@ -465,7 +627,7 @@ const Services: React.FC = () => {
       {/* 4. Pay Bills Seamlessly Section */}
       <div className="px-4 sm:px-6 lg:px-8 mt-24 sm:mt-32">
         <div className="text-center mb-12 sm:mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -474,7 +636,7 @@ const Services: React.FC = () => {
           >
             Pay Bills Seamlessly
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -499,7 +661,11 @@ const Services: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+                transition={{
+                  duration: 0.5,
+                  delay: idx * 0.1,
+                  ease: "easeOut",
+                }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
                 className="bg-white p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-slate-200/40 hover:shadow-lg transition-all duration-300 flex flex-col items-start"
               >
@@ -507,8 +673,12 @@ const Services: React.FC = () => {
                   {card.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-[#0b2d5c] mb-2 sm:mb-3 font-sans">{card.title}</h3>
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal font-sans">{card.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#0b2d5c] mb-2 sm:mb-3 font-sans">
+                    {card.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal font-sans">
+                    {card.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -519,7 +689,7 @@ const Services: React.FC = () => {
       {/* 5. Flight Booking Section */}
       <div className="px-4 sm:px-6 lg:px-8 mt-24 sm:mt-32">
         <div className="text-center mb-12 sm:mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -528,7 +698,7 @@ const Services: React.FC = () => {
           >
             Flight Booking
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -551,11 +721,19 @@ const Services: React.FC = () => {
               className="bg-white rounded-[1.5rem] border border-slate-200/60 overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
             >
               <div className="h-48 w-full overflow-hidden">
-                <img src={card.image} alt={card.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="p-6 sm:p-4 flex flex-col flex-1">
-                <h3 className="text-lg font-bold text-[#0B2D5C] mb-3 font-sans">{card.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-normal font-sans flex-1">{card.description}</p>
+                <h3 className="text-lg font-bold text-[#0B2D5C] mb-3 font-sans">
+                  {card.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed font-normal font-sans flex-1">
+                  {card.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -565,7 +743,7 @@ const Services: React.FC = () => {
       {/* 6. Smart Market Section */}
       <div id="smart-market" className="px-4 sm:px-6 lg:px-8 mt-24 sm:mt-32">
         <div className="text-center mb-12 sm:mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -574,7 +752,7 @@ const Services: React.FC = () => {
           >
             Smart Market
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -595,22 +773,41 @@ const Services: React.FC = () => {
               transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className={`p-8 sm:p-10 rounded-[2rem] hover:shadow-lg transition-all duration-300 flex flex-col items-start ${
-                card.isGreen ? "bg-[#8ce9c4] text-slate-900" : "bg-[#0B2D5C]/5 text-slate-800"
+                card.isGreen
+                  ? "bg-[#8ce9c4] text-slate-900"
+                  : "bg-[#0B2D5C]/5 text-slate-800"
               }`}
             >
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 shadow-xs ${
-                card.isGreen ? "bg-secondary text-white" : "bg-[#0B2D5C] text-white"
-              }`}>
+              <div
+                className={`w-12 h-12 rounded-full flex items-center justify-center mb-6 shadow-xs ${
+                  card.isGreen
+                    ? "bg-secondary text-white"
+                    : "bg-[#0B2D5C] text-white"
+                }`}
+              >
                 <TbCheck className="text-xl sm:text-2xl" />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold mb-6 mt-4 font-sans text-slate-900">{card.role}</h3>
+              <h3 className="text-lg sm:text-xl font-bold mb-6 mt-4 font-sans text-slate-900">
+                {card.role}
+              </h3>
               <ul className="space-y-4 w-full flex-1">
                 {card.plans.map((item) => (
-                  <li key={item} className="flex gap-3 items-start text-sm sm:text-base font-medium font-sans">
-                    <LuCircleCheckBig className={`text-lg shrink-0 mt-1 ${
-                      card.isGreen ? "text-secondary" : "text-[#0B2D5C]"
-                    }`} />
-                    <span className={card.isGreen ? "text-slate-800" : "text-slate-700"}>{item}</span>
+                  <li
+                    key={item}
+                    className="flex gap-3 items-start text-sm sm:text-base font-medium font-sans"
+                  >
+                    <LuCircleCheckBig
+                      className={`text-lg shrink-0 mt-1 ${
+                        card.isGreen ? "text-secondary" : "text-[#0B2D5C]"
+                      }`}
+                    />
+                    <span
+                      className={
+                        card.isGreen ? "text-slate-800" : "text-slate-700"
+                      }
+                    >
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -671,7 +868,9 @@ const Services: React.FC = () => {
         >
           {/* ── Outer dashed ring ── */}
           <circle
-            cx="125" cy="125" r="80"
+            cx="125"
+            cy="125"
+            r="80"
             fill="none"
             stroke="#0B2D5C"
             strokeOpacity="0.3"
@@ -748,7 +947,12 @@ const Services: React.FC = () => {
                 initial={{ scale: 0, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.15 + idx * 0.1, type: "spring", stiffness: 120 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.15 + idx * 0.1,
+                  type: "spring",
+                  stiffness: 120,
+                }}
                 style={{ transformOrigin: `${cx}px ${cy}px` }}
               >
                 {/* Gray circle */}
@@ -774,7 +978,8 @@ const Services: React.FC = () => {
                 {isMultiLine ? (
                   <>
                     <text
-                      x={lx} y={ly - 4}
+                      x={lx}
+                      y={ly - 4}
                       textAnchor={textAnchor}
                       fontSize="7.5"
                       fontWeight="600"
@@ -784,7 +989,8 @@ const Services: React.FC = () => {
                       Smart
                     </text>
                     <text
-                      x={lx} y={ly + 5}
+                      x={lx}
+                      y={ly + 5}
                       textAnchor={textAnchor}
                       fontSize="7.5"
                       fontWeight="600"
@@ -796,7 +1002,8 @@ const Services: React.FC = () => {
                   </>
                 ) : (
                   <text
-                    x={lx} y={ly}
+                    x={lx}
+                    y={ly}
                     textAnchor={textAnchor}
                     dominantBaseline="middle"
                     fontSize="7.5"

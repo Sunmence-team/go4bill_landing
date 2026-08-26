@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
               <img
                 src={assets.logo}
                 alt="Go4bill"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </Link>
           </div>

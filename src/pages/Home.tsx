@@ -1,54 +1,60 @@
 import React, { useState } from "react";
 import assets from "../assets/assets";
 import { motion } from "motion/react";
-import {
-  TbArrowsLeftRight,
-  TbPlus,
-  TbX,
-} from "react-icons/tb";
-import {
-  IoMdCheckmarkCircle,
-  IoMdStar,
-} from "react-icons/io";
+import { TbArrowsLeftRight, TbPlus, TbX } from "react-icons/tb";
+import { IoMdCheckmarkCircle, IoMdStar } from "react-icons/io";
 import { HiEye } from "react-icons/hi";
-import { FaReceipt, FaPlane, FaFileAlt, FaUser, FaCreditCard, FaLock, FaWallet } from "react-icons/fa";
+import {
+  FaReceipt,
+  FaPlane,
+  FaFileAlt,
+  FaUser,
+  FaCreditCard,
+  FaLock,
+  FaWallet,
+} from "react-icons/fa";
 import { LuCircleCheckBig } from "react-icons/lu";
-
 
 const features = [
   {
     title: "Secure Transactions",
-    description: "Your money and information are protected with advanced security measures.",
+    description:
+      "Your money and information are protected with advanced security measures.",
     icon: <FaLock className="text-2xl" />,
     isTeal: false,
   },
   {
     title: "Fast Transfers",
-    description: "Send and receive money quickly across borders with seamless and efficient transaction processing.",
+    description:
+      "Send and receive money quickly across borders with seamless and efficient transaction processing.",
     icon: <TbArrowsLeftRight className="text-2xl" />,
     isTeal: true,
   },
   {
     title: "Bill payments",
-    description: "Pay Utility bills, Subscriptions, and service worldwide instantly.",
+    description:
+      "Pay Utility bills, Subscriptions, and service worldwide instantly.",
     icon: <FaReceipt className="text-2xl" />,
     isTeal: false,
   },
   {
     title: "Multi-currency wallet",
-    description: "Hold, send, receive, and exchange multiple currencies in one secure wallet.",
+    description:
+      "Hold, send, receive, and exchange multiple currencies in one secure wallet.",
     icon: <FaWallet className="text-2xl" />,
     isTeal: false,
   },
   {
     title: "Cross-border Transfers",
-    description: "Send money globally with speed, transparency, and affordable fees.",
+    description:
+      "Send money globally with speed, transparency, and affordable fees.",
     icon: <FaCreditCard className="text-2xl" />,
     isTeal: true,
   },
   {
     title: "Travel & Lifestyle",
-    description: "Book flights, hotels, and experiences directly from your wallet.",
+    description:
+      "Book flights, hotels, and experiences directly from your wallet.",
     icon: <FaPlane className="text-2xl" />,
     isTeal: false,
   },
@@ -63,10 +69,7 @@ const Home: React.FC = () => {
   return (
     <main className=" py-4 md:py-4">
       {/* Hero Container */}
-      <div
-        id="home"
-        className="mainone px-4 sm:px-6 lg:px-8 py-8 md:py-1"
-      >
+      <div id="home" className="mainone px-4 sm:px-6 lg:px-8 py-8 md:py-1">
         <div className="bg-primary text-white rounded-[2rem] md:rounded-br-[15rem] overflow-hidden relative shadow-xl">
           <div className="px-6 py-12 sm:px-12 md:py-16 lg:py-24 lg:px-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -109,7 +112,6 @@ const Home: React.FC = () => {
                   >
                     Get Started
                   </a>
-                 
                 </motion.div>
               </div>
 
@@ -134,7 +136,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Partners Marquee Section */}
-      <div className="mt-15 bg-primary text-white py-2 overflow-hidden relative shadow-lg">
+      <div className="mt-15 bg-primary text-white py-4 overflow-hidden relative shadow-lg">
         {/* Left & Right fading gradients for seamless transition */}
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
@@ -142,61 +144,125 @@ const Home: React.FC = () => {
         <div className="flex w-max">
           {/* First set of logos */}
           <div className="flex gap-16 md:gap-24 px-8 md:px-12 animate-marquee shrink-0 items-center justify-around min-w-full">
-            <img
-              src={assets.pay}
-              alt="PayPal Logo"
-              className="h-12 object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition duration-300 select-none pointer-events-none"
-            />
+            {/* Spherule (Icon + Text) */}
+            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+              <img
+                src={assets.spec}
+                alt="Spherule Icon"
+                className="h-6 md:h-7 object-contain"
+              />
+              <img
+                src={assets.spen}
+                alt="Spherule Text"
+                className="h-4 md:h-5 object-contain"
+              />
+            </div>
+
+            {/* Samsung Pay */}
             <img
               src={assets.ali}
-              alt="Alipay Logo"
-              className="h-12 object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition duration-300 select-none pointer-events-none"
+              alt="Samsung Pay Logo"
+              className="h-6 md:h-7 object-contain opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none"
             />
-            <img
-              src={assets.visa}
-              alt="Visa Logo"
-              className="h-12 object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition duration-300 select-none pointer-events-none"
-            />
+
+            {/* Visa & Mastercard */}
+            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+              <img
+                src={assets.visa}
+                alt="Visa Logo"
+                className="h-6 md:h-7 object-contain"
+              />
+              <img
+                src={assets.mastercard}
+                alt="Mastercard Logo"
+                className="h-6 md:h-7 object-contain"
+              />
+            </div>
+
+            {/* PayPal (Pay + Pal) */}
+            <div className="flex items-center gap-0.5 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+              <img
+                src={assets.pay}
+                alt="PayPal Logo"
+                className="h-6 md:h-7 object-contain"
+              />
+              <img
+                src={assets.pal}
+                alt=""
+                className="h-6 md:h-7 object-contain"
+              />
+            </div>
           </div>
+
           {/* Second set of logos for seamless loop */}
           <div className="flex gap-16 md:gap-24 px-8 md:px-12 animate-marquee shrink-0 items-center justify-around min-w-full">
-            <img
-              src={assets.pay}
-              alt="PayPal Logo"
-              className="h-12 object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition duration-300 select-none pointer-events-none"
-            />
+            {/* Spherule (Icon + Text) */}
+            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+              <img
+                src={assets.spec}
+                alt="Spherule Icon"
+                className="h-6 md:h-7 object-contain"
+              />
+              <img
+                src={assets.spen}
+                alt="Spherule Text"
+                className="h-4 md:h-5 object-contain"
+              />
+            </div>
+
+            {/* Samsung Pay */}
             <img
               src={assets.ali}
-              alt="Alipay Logo"
-              className="h-12 object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition duration-300 select-none pointer-events-none"
+              alt="Samsung Pay Logo"
+              className="h-6 md:h-7 object-contain opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none"
             />
-            <img
-              src={assets.visa}
-              alt="Visa Logo"
-              className="h-12 object-contain filter brightness-0 invert opacity-60 hover:opacity-100 transition duration-300 select-none pointer-events-none"
-            />
+
+            {/* Visa & Mastercard */}
+            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+              <img
+                src={assets.visa}
+                alt="Visa Logo"
+                className="h-6 md:h-7 object-contain"
+              />
+              <img
+                src={assets.mastercard}
+                alt="Mastercard Logo"
+                className="h-6 md:h-7 object-contain"
+              />
+            </div>
+
+            {/* PayPal (Pay + Pal) */}
+            <div className="flex items-center gap-0.5 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+              <img
+                src={assets.pay}
+                alt="PayPal Logo"
+                className="h-6 md:h-7 object-contain"
+              />
+              <img
+                src={assets.pal}
+                alt=""
+                className="h-6 md:h-7 object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Mission & Vision Section */}
-      <section
-        id="about"
-        className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-stretch">
-          {/* Left Column - Mockup Card */}
+      <section id="about" className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+          {/* Left Column - Mockup Image */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-7 bg-tertiary rounded-[2rem] overflow-hidden flex items-end justify-center pt-12 md:pt-16 h-full min-h-[350px] sm:min-h-[450px] lg:min-h-[500px]"
+            className="lg:col-span-7 flex items-center justify-center"
           >
             <img
-              src={assets.heroimage}
+              src={assets.second}
               alt="Go4bill Mobile App Feature Preview"
-              className="w-full max-w-[280px] sm:max-w-[340px] md:max-w-[400px] object-contain object-bottom select-none pointer-events-none translate-y-4 hover:scale-105 transition-transform duration-500 ease-out"
+              className="w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[480px] h-auto object-contain select-none pointer-events-none hover:scale-105 transition-transform duration-500 ease-out"
             />
           </motion.div>
 
@@ -254,10 +320,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section
-        id="why"
-        className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24"
-      >
+      <section id="why" className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center mb-16 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -294,11 +357,13 @@ const Home: React.FC = () => {
               className="relative bg-white pt-12 pb-8 px-6 sm:px-8 rounded-[1.5rem] border border-slate-100/80 shadow-xs flex flex-col justify-start hover:shadow-md transition-all duration-300 group"
             >
               {/* Overlapping Icon Container */}
-              <div className={`absolute -top-7 left-8 w-14 h-14 rounded-full flex items-center justify-center shadow-xs border-4 border-white group-hover:scale-110 transition-transform duration-300 ${
-                feature.isTeal 
-                  ? "bg-[#12b886]/10 text-secondary" 
-                  : "bg-tertiary text-[#0B2D5C]"
-              }`}>
+              <div
+                className={`absolute -top-7 left-8 w-14 h-14 rounded-full flex items-center justify-center shadow-xs border-4 border-white group-hover:scale-110 transition-transform duration-300 ${
+                  feature.isTeal
+                    ? "bg-[#12b886]/10 text-secondary"
+                    : "bg-tertiary text-[#0B2D5C]"
+                }`}
+              >
                 {feature.icon}
               </div>
 
@@ -316,10 +381,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* How It Works Section */}
-      <section
-        id="how"
-        className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24"
-      >
+      <section id="how" className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         {/* Centered Heading */}
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
@@ -413,18 +475,15 @@ const Home: React.FC = () => {
           className="w-full rounded-[2rem] overflow-hidden shadow-xs border border-slate-100"
         >
           <img
-            src={assets.work}
+            src={assets.howwork}
             alt="How Go4Bill works mockup"
-            className="w-full h-auto object-cover select-none pointer-events-none hover:scale-[1.01] transition-transform duration-700 ease-out"
+            className="w-full h-[320px] sm:h-[550px] lg:h-[900px] object-cover object-top select-none pointer-events-none hover:scale-[1.01] transition-transform duration-700 ease-out"
           />
         </motion.div>
       </section>
 
       {/* Our Core Values Section */}
-      <section
-        id="values"
-        className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24"
-      >
+      <section id="values" className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         {/* Centered Heading */}
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
@@ -551,10 +610,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Introducing Smart Market Section */}
-      <section
-        id="value"
-        className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24"
-      >
+      <section id="value" className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column - Street Gate Photo */}
           <motion.div
@@ -797,10 +853,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Frequently Asked Questions Section */}
-      <section
-        id="faq"
-        className="px-4 sm:px-6 lg:px-8 py-16 md:py-24"
-      >
+      <section id="faq" className="px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         {/* Centered Heading */}
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
@@ -1003,7 +1056,11 @@ const Home: React.FC = () => {
                       href="#playstore"
                       className="bg-black border border-gray-400 rounded-2xl px-6 py-3 flex items-center gap-3 text-white min-w-[220px]"
                     >
-                      <img src={assets.play} alt="Google Play" className="w-8 h-8 object-contain" />
+                      <img
+                        src={assets.play}
+                        alt="Google Play"
+                        className="w-8 h-8 object-contain"
+                      />
                       <div>
                         <p className="text-xs">GET IT ON</p>
                         <h4 className="text-2xl font-semibold">Google Play</h4>
@@ -1014,7 +1071,11 @@ const Home: React.FC = () => {
                       href="#appstore"
                       className="bg-black border border-gray-400 rounded-2xl px-6 py-3 flex items-center gap-3 text-white min-w-[220px]"
                     >
-                      <img src={assets.apple} alt="Apple Store" className="w-8 h-8 object-contain" />
+                      <img
+                        src={assets.apple}
+                        alt="Apple Store"
+                        className="w-8 h-8 object-contain"
+                      />
                       <div>
                         <p className="text-xs">Download on the</p>
                         <h4 className="text-2xl font-semibold">App Store</h4>
