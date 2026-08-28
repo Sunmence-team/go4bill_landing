@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PageHeader from "../components/PageHeader";
 import { motion } from "motion/react";
 import { FaPhoneAlt, FaEnvelope, FaGlobe, FaMapMarkerAlt, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import assests from "../assets/assets";
+// import assests from "../assets/assets";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
