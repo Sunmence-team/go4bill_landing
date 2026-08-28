@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PageHeader from "../components/PageHeader";
 import {
   FiDatabase,
@@ -70,6 +70,29 @@ const sections = [
 const PrivacyPolicy: React.FC = () => {
   const [activeSection, setActiveSection] = useState("info-collect");
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-10% 0px -70% 0px",
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((section) => {
+      const el = document.getElementById(section.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollTo = (id: string) => {
     setActiveSection(id);
     const element = document.getElementById(id);
@@ -89,7 +112,7 @@ const PrivacyPolicy: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Table of Contents Sidebar */}
           <aside className="lg:col-span-4 hidden lg:block">
-            <div className="sticky top-24 bg-white border border-slate-200 rounded-2xl p-5 shadow-sm max-h-[calc(100vh-120px)] overflow-y-auto custom-scrollbar">
+            <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
               <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-2">
                 Table of Contents
               </h3>
