@@ -16,7 +16,20 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 12s linear infinite;
+}
+
+/* Faint primary color style (#0b2d5c) for marquee brand logos */
+.brand-faint-primary,
+.brand-faint-blue {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(70%) saturate(2200%) hue-rotate(200deg);
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.brand-faint-primary:hover,
+.brand-faint-blue:hover {
+  opacity: 0.85;
 }
 
 @keyframes marquee {

@@ -136,25 +136,25 @@ const Home: React.FC = () => {
       </div>
 
       {/* Partners Marquee Section */}
-      <div className="mt-15 bg-primary text-white py-4 overflow-hidden relative shadow-lg">
+      <div className="mt-12 py-6 overflow-hidden relative">
         {/* Left & Right fading gradients for seamless transition */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-primary to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-primary to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-transparent to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-transparent to-transparent z-10 pointer-events-none" />
 
         <div className="flex w-max">
           {/* First set of logos */}
           <div className="flex gap-16 md:gap-24 px-8 md:px-12 animate-marquee shrink-0 items-center justify-around min-w-full">
             {/* Spherule (Icon + Text) */}
-            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+            <div className="flex items-center gap-2 shrink-0 brand-faint-primary select-none pointer-events-none">
               <img
                 src={assets.spec}
                 alt="Spherule Icon"
-                className="h-6 md:h-7 object-contain"
+                className="h-7 md:h-8 object-contain"
               />
               <img
                 src={assets.spen}
                 alt="Spherule Text"
-                className="h-4 md:h-5 object-contain"
+                className="h-6 md:h-7 object-contain"
               />
             </div>
 
@@ -162,11 +162,11 @@ const Home: React.FC = () => {
             <img
               src={assets.ali}
               alt="Samsung Pay Logo"
-              className="h-6 md:h-7 object-contain opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none"
+              className="h-6 md:h-7 object-contain brand-faint-primary select-none pointer-events-none"
             />
 
             {/* Visa & Mastercard */}
-            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+            <div className="flex items-center gap-2 shrink-0 brand-faint-primary select-none pointer-events-none">
               <img
                 src={assets.visa}
                 alt="Visa Logo"
@@ -180,7 +180,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* PayPal (Pay + Pal) */}
-            <div className="flex items-center gap-0.5 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+            <div className="flex items-center gap-0.5 shrink-0 brand-faint-primary select-none pointer-events-none">
               <img
                 src={assets.pay}
                 alt="PayPal Logo"
@@ -197,7 +197,7 @@ const Home: React.FC = () => {
           {/* Second set of logos for seamless loop */}
           <div className="flex gap-16 md:gap-24 px-8 md:px-12 animate-marquee shrink-0 items-center justify-around min-w-full">
             {/* Spherule (Icon + Text) */}
-            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+            <div className="flex items-center gap-2 shrink-0 brand-faint-primary select-none pointer-events-none">
               <img
                 src={assets.spec}
                 alt="Spherule Icon"
@@ -214,11 +214,11 @@ const Home: React.FC = () => {
             <img
               src={assets.ali}
               alt="Samsung Pay Logo"
-              className="h-6 md:h-7 object-contain opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none"
+              className="h-6 md:h-7 object-contain brand-faint-primary select-none pointer-events-none"
             />
 
             {/* Visa & Mastercard */}
-            <div className="flex items-center gap-2 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+            <div className="flex items-center gap-2 shrink-0 brand-faint-primary select-none pointer-events-none">
               <img
                 src={assets.visa}
                 alt="Visa Logo"
@@ -232,7 +232,7 @@ const Home: React.FC = () => {
             </div>
 
             {/* PayPal (Pay + Pal) */}
-            <div className="flex items-center gap-0.5 shrink-0 opacity-80 hover:opacity-100 transition duration-300 select-none pointer-events-none">
+            <div className="flex items-center gap-0.5 shrink-0 brand-faint-primary select-none pointer-events-none">
               <img
                 src={assets.pay}
                 alt="PayPal Logo"
