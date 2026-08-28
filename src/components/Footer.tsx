@@ -19,14 +19,18 @@ const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="flex gap-3">
               <a
-                href="#facebook"
+                href="https://web.facebook.com/pineleafestate"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="w-10 h-10 rounded-full bg-white text-[#0B2D5C] flex items-center justify-center hover:scale-110 hover:bg-slate-100 transition-all duration-200"
               >
                 <FaFacebookF size={16} />
               </a>
               <a
-                href="#instagram"
+                href="https://www.instagram.com/pineleaf_estate_?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-full bg-white text-[#0B2D5C] flex items-center justify-center hover:scale-110 hover:bg-slate-100 transition-all duration-200"
               >
@@ -106,7 +110,7 @@ const Footer: React.FC = () => {
 
             <h3 className="text-lg font-bold text-white mb-2 font-sans">Address</h3>
             <p className="text-white/80 text-sm leading-relaxed font-sans">
-              Suntoy building ,opposite winner church ogbomoso.
+              Suit F17 Garbs Mega Plaza 39 Awka Road Onitsha, Anambra State
             </p>
           </div>
         </div>

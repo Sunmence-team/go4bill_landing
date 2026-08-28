@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
                       Address
                     </span>
                     <span className="text-sm sm:text-base font-bold text-[#0B2D5C] font-sans leading-snug block">
-                      Suntoy building, opposite winner church ogbomoso.
+                      Suit F17 Garbs Mega Plaza 39 Awka Road Onitsha, Anambra State
                     </span>
                   </div>
                 </div>
@@ -119,14 +119,18 @@ const Contact: React.FC = () => {
               <hr className="border-slate-200/80 mb-8" />
               <div className="flex gap-3">
                 <a 
-                  href="#facebook" 
+                  href="https://web.facebook.com/pineleafestate" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0B2D5C] text-white flex items-center justify-center hover:scale-110 hover:bg-[#092545] transition-all duration-200 shadow-sm"
                 >
                   <FaFacebookF className="text-base sm:text-lg" />
                 </a>
                 <a 
-                  href="#instagram" 
+                  href="https://www.instagram.com/pineleaf_estate_?utm_source=ig_web_button_share_sheet&igsi=ZDNlZDc0MzIxNw==" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0B2D5C] text-white flex items-center justify-center hover:scale-110 hover:bg-[#092545] transition-all duration-200 shadow-sm"
                 >
@@ -241,13 +245,16 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="w-full rounded-[2rem] overflow-hidden shadow-xs border border-slate-100"
+          className="relative w-full rounded-[2rem] overflow-hidden shadow-xs border border-slate-100"
         >
-          <img
-            src={assests.map}
-            alt="Map Go4Bill"
-            className="w-full h-auto object-cover select-none pointer-events-none hover:scale-[1.01] transition-transform duration-700 ease-out"
-          />
+          <iframe
+            title="Garbs Mega Plaza, Pineleef estate office"
+            src="https://maps.google.com/maps?q=Garbs+Mega+Plaza,+Pineleef+estate+office,+Awka+Rd,+GRA,+Onitsha+434106,+Anambra&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-[400px] sm:h-[500px] rounded-[2rem] border-0 shadow-md"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </motion.div>
       </section>
     </main>
