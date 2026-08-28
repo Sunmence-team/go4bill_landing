@@ -1,8 +1,10 @@
 import logo from "./images/logo.png"
 import heroimage from "./images/firstphones .png"
-import pay from "./images/pay.png"
-import ali from "./images/ali.png"
-import visa from "./images/visa.png"
+import pay from "./images/pay.svg"
+import pal from "./images/pal.svg"
+import spec from "./images/sph.svg"
+import ali from "./images/Ali.svg"
+import visa from "./images/visa-logo.svg"
 import mage1 from "./images/mage1.jpg"
 import mage2 from "./images/mage2.png"
 import work from "./images/work.png"
@@ -23,12 +25,22 @@ import flight2 from "./images/flight2.jpg"
 import flight3 from "./images/flight3.jpg"
 import flight4 from "./images/flight4.jpg"
 import map from "./images/map.jpg"
+import second from "./images/second.png" 
+import howwork from "./images/howwork.png"
+import spen from './images/spen.svg'
+import mastercard from './images/Mastercard.svg'
 
 
 const assests = {
 logo,
+mastercard,
+second,
+spen,
+spec,
+howwork,
 heroimage,
 pay,
+pal,
 ali,
 visa,
 mage1,
