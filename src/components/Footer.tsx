@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold text-white mb-2 font-sans">Email</h3>
             <p className="text-white/80 text-sm mb-6 font-sans">
               <a href="mailto:support@go4bill.com" className="hover:text-white transition-colors">
-                support@go4bill.com
+                support@go4billapp.com
               </a>
             </p>
 

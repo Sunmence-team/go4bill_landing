@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                       Email
                     </span>
                     <a href="mailto:support@go4bill.com" className="text-sm sm:text-base font-bold text-[#0B2D5C] hover:underline font-sans break-all">
-                      support@go4bill.com
+                      support@go4billapp.com
                     </a>
                   </div>
                 </div>
