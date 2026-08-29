@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PageHeader from "../components/PageHeader";
 import {
   FiDatabase,
@@ -69,32 +69,70 @@ const sections = [
 
 const PrivacyPolicy: React.FC = () => {
   const [activeSection, setActiveSection] = useState("info-collect");
+  const tocRef = useRef<HTMLDivElement>(null);
+  const activeNavRef = useRef<HTMLButtonElement>(null);
+  const isManualScroll = useRef(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-10% 0px -70% 0px",
-        threshold: 0,
+    const handleScroll = () => {
+      if (isManualScroll.current) return;
+
+      const isAtBottom =
+        window.innerHeight + Math.round(window.scrollY) >=
+        document.documentElement.scrollHeight - 50;
+
+      if (isAtBottom) {
+        setActiveSection(sections[sections.length - 1].id);
+        return;
       }
-    );
 
-    sections.forEach((section) => {
-      const el = document.getElementById(section.id);
-      if (el) observer.observe(el);
-    });
+      const scrollPosition = window.scrollY + 140;
 
-    return () => observer.disconnect();
+      let current = sections[0].id;
+      for (let i = 0; i < sections.length; i++) {
+        const el = document.getElementById(sections[i].id);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.pageYOffset;
+          if (scrollPosition >= top) {
+            current = sections[i].id;
+          } else {
+            break;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (activeNavRef.current && tocRef.current) {
+      const container = tocRef.current;
+      const item = activeNavRef.current;
+
+      const containerTop = container.scrollTop;
+      const containerBottom = containerTop + container.clientHeight;
+      const itemTop = item.offsetTop - container.offsetTop;
+      const itemBottom = itemTop + item.clientHeight;
+
+      if (itemTop < containerTop) {
+        container.scrollTo({ top: itemTop - 12, behavior: "smooth" });
+      } else if (itemBottom > containerBottom) {
+        container.scrollTo({
+          top: itemBottom - container.clientHeight + 12,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [activeSection]);
 
   const scrollTo = (id: string) => {
     setActiveSection(id);
+    isManualScroll.current = true;
     const element = document.getElementById(id);
     if (element) {
       const yOffset = -100;
@@ -102,6 +140,9 @@ const PrivacyPolicy: React.FC = () => {
         element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
+    setTimeout(() => {
+      isManualScroll.current = false;
+    }, 800);
   };
 
   return (
@@ -109,20 +150,24 @@ const PrivacyPolicy: React.FC = () => {
       <PageHeader title="Go4Bill Privacy Policy" />
 
       <div className="px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Table of Contents Sidebar */}
-          <aside className="lg:col-span-4 hidden lg:block">
-            <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-2">
+          <aside className="lg:col-span-4 hidden lg:block sticky top-24 self-start">
+            <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm max-h-[calc(100vh-7.5rem)] flex flex-col">
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 px-2 shrink-0">
                 Table of Contents
               </h3>
-              <nav className="space-y-1">
+              <nav
+                ref={tocRef}
+                className="space-y-1 overflow-y-auto flex-1 pr-1 custom-scrollbar"
+              >
                 {sections.map((item) => {
                   const Icon = item.icon;
                   const isActive = activeSection === item.id;
                   return (
                     <button
                       key={item.id}
+                      ref={isActive ? activeNavRef : null}
                       onClick={() => scrollTo(item.id)}
                       className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium transition-all text-left ${
                         isActive
@@ -131,7 +176,9 @@ const PrivacyPolicy: React.FC = () => {
                       }`}
                     >
                       <Icon
-                        className={`text-base shrink-0 ${isActive ? "text-white" : "text-slate-400"}`}
+                        className={`text-base shrink-0 ${
+                          isActive ? "text-white" : "text-slate-400"
+                        }`}
                       />
                       <span className="truncate">{item.label}</span>
                     </button>
@@ -143,8 +190,6 @@ const PrivacyPolicy: React.FC = () => {
 
           {/* Main Privacy Policy Content */}
           <div className="lg:col-span-8 bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-12">
-
-
             {/* Section 1 */}
             <section
               id="info-collect"
@@ -479,14 +524,13 @@ const PrivacyPolicy: React.FC = () => {
               </div>
             </section>
 
-            {/* Section 10 & 11 */}
+            {/* Section 10 */}
             <section
               id="data-retention"
               className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-4"
             >
               <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
-                <FiHardDrive className="text-[#0B2D5C]" /> 10. Data Retention &
-                11. Account Deletion
+                <FiHardDrive className="text-[#0B2D5C]" /> 10. Data Retention
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
                 We retain personal information for as long as reasonably
@@ -494,6 +538,16 @@ const PrivacyPolicy: React.FC = () => {
                 fulfill legal and regulatory obligations, resolve disputes, and
                 prevent fraud.
               </p>
+            </section>
+
+            {/* Section 11 */}
+            <section
+              id="account-deletion"
+              className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-4"
+            >
+              <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <FiTrash2 className="text-[#0B2D5C]" /> 11. Account Deletion
+              </h2>
               <div className="bg-slate-50 border border-slate-200 p-4 rounded-xl space-y-2 text-sm text-slate-700">
                 <p className="font-semibold text-slate-900">
                   In-App Account Deletion:
@@ -538,66 +592,70 @@ const PrivacyPolicy: React.FC = () => {
               </ul>
             </section>
 
-            {/* Section 13 & 14 */}
+            {/* Section 13 */}
             <section
               id="children-privacy"
-              className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-6"
+              className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-4"
             >
-              <div>
-                <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-2">
-                  <FiAlertOctagon className="text-[#0B2D5C]" /> 13.
-                  Children&apos;s Privacy
-                </h2>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Go4Bill is intended for individuals{" "}
-                  <strong>18 years of age or older</strong>. We do not knowingly
-                  provide Services to children under 18 or intentionally collect
-                  personal information from children under 18.
-                </p>
-              </div>
-
-              <div id="international-transfers">
-                <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-2">
-                  <FiGlobe className="text-[#0B2D5C]" /> 14. International Data
-                  Transfers
-                </h2>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Go4Bill currently operates primarily in Nigeria but may expand
-                  its Services internationally. Where personal information is
-                  transferred internationally, we take reasonable steps to
-                  ensure appropriate data protection standards are followed.
-                </p>
-              </div>
+              <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <FiAlertOctagon className="text-[#0B2D5C]" /> 13. Children&apos;s
+                Privacy
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Go4Bill is intended for individuals{" "}
+                <strong>18 years of age or older</strong>. We do not knowingly
+                provide Services to children under 18 or intentionally collect
+                personal information from children under 18.
+              </p>
             </section>
 
-            {/* Section 15 & 16 */}
+            {/* Section 14 */}
+            <section
+              id="international-transfers"
+              className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-4"
+            >
+              <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <FiGlobe className="text-[#0B2D5C]" /> 14. International Data
+                Transfers
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Go4Bill currently operates primarily in Nigeria but may expand
+                its Services internationally. Where personal information is
+                transferred internationally, we take reasonable steps to
+                ensure appropriate data protection standards are followed.
+              </p>
+            </section>
+
+            {/* Section 15 */}
             <section
               id="third-party-links"
-              className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-6"
+              className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-4"
             >
-              <div>
-                <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-2">
-                  <FiExternalLink className="text-[#0B2D5C]" /> 15. Third-Party
-                  Links & Services
-                </h2>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Go4Bill may integrate with or provide links to third-party
-                  services. We are not responsible for the privacy practices or
-                  content of third parties operating independently.
-                </p>
-              </div>
+              <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <FiExternalLink className="text-[#0B2D5C]" /> 15. Third-Party
+                Links & Services
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Go4Bill may integrate with or provide links to third-party
+                services. We are not responsible for the privacy practices or
+                content of third parties operating independently.
+              </p>
+            </section>
 
-              <div id="changes-policy">
-                <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-2">
-                  <FiRefreshCw className="text-[#0B2D5C]" /> 16. Changes to This
-                  Privacy Policy
-                </h2>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  We may update this Privacy Policy from time to time. When
-                  changes are made, we will update the &quot;Last Updated&quot;
-                  date at the top of this policy.
-                </p>
-              </div>
+            {/* Section 16 */}
+            <section
+              id="changes-policy"
+              className="scroll-mt-28 border-b border-slate-100 pb-8 space-y-4"
+            >
+              <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3">
+                <FiRefreshCw className="text-[#0B2D5C]" /> 16. Changes to This
+                Privacy Policy
+              </h2>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                We may update this Privacy Policy from time to time. When
+                changes are made, we will update the &quot;Last Updated&quot;
+                date at the top of this policy.
+              </p>
             </section>
 
             {/* Section 17: Contact Us */}
@@ -658,3 +716,4 @@ const PrivacyPolicy: React.FC = () => {
 };
 
 export default PrivacyPolicy;
+

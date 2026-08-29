@@ -292,7 +292,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {cards.map((card, idx) => (
             <motion.div
               key={card.title}
@@ -346,16 +346,16 @@ const Services: React.FC = () => {
         </div>
 
         {/* Desktop Step-Flow Layout (Pixel-Perfect Unified SVG) */}
-        <div className="hidden lg:block relative w-full max-w-7xl mx-auto h-[780px]">
+        <div className="hidden lg:block relative w-full max-w-7xl mx-auto h-[710px]">
           {/* Single Unified SVG Overlay for Gapless Lines & Arrows */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none"
-            viewBox="0 0 1280 780"
+            viewBox="0 0 1280 710"
             fill="none"
           >
             {/* Central Vertical Line */}
             <path
-              d="M 640 60 V 750"
+              d="M 640 60 V 660"
               stroke="#E5EEF5"
               strokeWidth="3"
               strokeLinecap="round"
@@ -393,7 +393,7 @@ const Services: React.FC = () => {
               strokeLinecap="round"
             />
 
-            {/* Downward Chevron Arrows (Matching Reference Image) */}
+            {/* Downward Chevron Arrows (Between Steps Only) */}
             <path
               d="M 620 135 L 640 155 L 660 135"
               stroke="#E5EEF5"
@@ -417,13 +417,6 @@ const Services: React.FC = () => {
             />
             <path
               d="M 620 585 L 640 605 L 660 585"
-              stroke="#E5EEF5"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M 620 730 L 640 750 L 660 730"
               stroke="#E5EEF5"
               strokeWidth="3"
               strokeLinecap="round"
@@ -518,7 +511,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Mobile/Tablet Step Timeline */}
-        <div className="lg:hidden flex flex-col items-center gap-2 max-w-lg mx-auto py-4">
+        <div className="lg:hidden flex flex-col items-center gap-2 max-w-lg sm:max-w-xl mx-auto py-4">
           {transferCards.map((card, idx) => (
             <React.Fragment key={card.title}>
               <motion.div
@@ -539,7 +532,7 @@ const Services: React.FC = () => {
                   {card.description}
                 </p>
               </motion.div>
-              {idx < transferCards.length && (
+              {idx < transferCards.length - 1 && (
                 <div className="h-10 flex items-center justify-center relative py-1">
                   <svg width="40" height="32" viewBox="0 0 40 32" fill="none">
                     <path
@@ -587,7 +580,7 @@ const Services: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
           {topUpCards.map((card, idx) => (
             <motion.div
               key={card.provider}
@@ -654,7 +647,7 @@ const Services: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="bg-[#0B2D5C]/5 p-6 sm:p-12 md:p-16 rounded-[2rem] sm:rounded-[3rem]"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {billCards.map((card, idx) => (
               <motion.div
                 key={card.title}
@@ -709,7 +702,7 @@ const Services: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
           {flightCards.map((card, idx) => (
             <motion.div
               key={card.title}
