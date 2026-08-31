@@ -98,11 +98,11 @@ const Services: React.FC = () => {
       description:
         "Send money quickly and securely to other users with real-time transaction processing.",
     },
-    {
-      title: "User Search by Username",
-      description:
-        "Search for and identify users instantly through their unique usernames.",
-    },
+    // {
+    //   title: "User Search by Username",
+    //   description:
+    //     "Search for and identify users instantly through their unique usernames.",
+    // },
     {
       title: "User Search by Phone Number",
       description:
